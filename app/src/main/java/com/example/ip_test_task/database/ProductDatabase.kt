@@ -8,15 +8,13 @@ import androidx.room.TypeConverters
 import com.example.ip_test_task.database.DAO.ProductDao
 import com.example.ip_test_task.database.DTO.ProductDTO
 import com.example.ip_test_task.database.helpers.converters.ListToStringConverter
-import com.example.ip_test_task.database.helpers.converters.LocalDateTimeConverter
 
 @Database(
     entities = [ProductDTO::class],
     version = 1,
-    exportSchema = false
+    exportSchema = true
 )
 @TypeConverters(
-    LocalDateTimeConverter::class,
     ListToStringConverter::class
 )
 abstract class ProductDatabase : RoomDatabase() {
@@ -34,6 +32,7 @@ abstract class ProductDatabase : RoomDatabase() {
                     "ProductDatabase"
                 )
                     .allowMainThreadQueries()
+                    .createFromAsset("databases/data.db")
                     .build()
                 INSTANCE = inst
                 inst

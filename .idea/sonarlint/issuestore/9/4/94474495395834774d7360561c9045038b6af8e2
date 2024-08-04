@@ -1,8 +1,8 @@
 
-ikotlin:S125·"Remove this commented out code.(Ñ°äêıÿÿÿÿ8ÑÏÉ‘2J$8f2e8dc9-b254-4859-a326-d7e0e70bb04a
-gkotlin:S6310œ"Avoid hardcoded dispatchers.(œ”¿¸øÿÿÿÿ8ÙÏÉ‘2J$e13d466d-5bba-4cc7-a0c8-f6fb6ab7d808
-akotlin:S6310`"Avoid hardcoded dispatchers.(Í¡·Ş8ÚÏÉ‘2J$bed1a9f9-b6a9-4f66-a7b9-e18859e509db
-{kotlin:S1481¯"0Remove this unused "isSearching" local variable.(á¹é°ıÿÿÿÿ8óÏÉ‘2J$b28d5789-4287-4ed6-9eb5-ce569f89736e
-tkotlin:S1481©"/Remove this unused "endReached" local variable.(Û¸M8óÏÉ‘2J$edabd5d5-3f6c-41ed-a87f-fb8e6f98b3e8
-•kotlin:S1192™"ODefine a constant instead of duplicating this literal "Europe/Moscow" 10 times.(ª£÷Š8şÏÉ‘2J$0ecf4c2b-d350-4343-ba47-895445998ce1
-škotlin:S1192›"ODefine a constant instead of duplicating this literal "Ğ¢ĞµĞ»ĞµÑ„Ğ¾Ğ½" 3 times.(…Ñ¾Àşÿÿÿÿ8ç‘½‘2J$40f46e28-abdf-421e-b6fa-efbb471356e3
+dkotlin:S125“"Remove this commented out code.(¬åö8„¢Öç‘2J$b52a993e-bc0d-49e1-a3fe-f85cd0e28f4b
+ikotlin:S125À"Remove this commented out code.(Ñ°äêıÿÿÿÿ8–¢Öç‘2J$fec35492-e99b-46a7-b3e7-f9c024b0e1e5
+gkotlin:S6310Ÿ"Avoid hardcoded dispatchers.(œ”¿¸øÿÿÿÿ8§¢Öç‘2J$ea682f62-4f8c-4ab8-a0df-4f712bbd120a
+akotlin:S6310b"Avoid hardcoded dispatchers.(Í¡·Ş8§¢Öç‘2J$a6230a70-b23b-465b-a5ea-a3a6147bfcd5
+{kotlin:S1481¸"0Remove this unused "isSearching" local variable.(á¹é°ıÿÿÿÿ8Ù¢Öç‘2J$92f421b2-afa0-4df1-b287-4c9a6ba04020
+tkotlin:S1481²"/Remove this unused "endReached" local variable.(Û¸M8Ú¢Öç‘2J$d34a2770-8792-4317-a26d-b6c35855e3b2
+dkotlin:S1128L"Remove this unused import.(¹²…åøÿÿÿÿ8ä¢Öç‘2J$1bbc5b16-ca74-4836-b1dc-5dc3d7a71c02

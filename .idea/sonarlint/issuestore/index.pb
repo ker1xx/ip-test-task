@@ -29,3 +29,13 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 @
 local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
+Å
+Qapp/src/main/java/com/example/ip_test_task/database/helpers/DatabaseCopyHelper.kt,d\4\d4f30b050ee26e6d068c5ee9d65e56ac410da847
+k
+;app/src/main/java/com/example/ip_test_task/MyApplication.kt,c\6\c6688eb037a007170c2634c6b535de22b3e2a9eb
+Å
+Q.idea/sonarlint/securityhotspotstore/c/6/c6688eb037a007170c2634c6b535de22b3e2a9eb,b\d\bd035b71e4ccda8e41dfbab5bea54de8618eb11b
+w
+G.idea/sonarlint/issuestore/c/6/c6688eb037a007170c2634c6b535de22b3e2a9eb,f\c\fc8ef84164fc468ce6c959735cca308112254dff
+Å
+Q.idea/sonarlint/securityhotspotstore/d/4/d4f30b050ee26e6d068c5ee9d65e56ac410da847,f\7\f72e6ade4c05a42c1d6a70f45d24b5e90a990c49

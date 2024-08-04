@@ -5,6 +5,7 @@ package com.example.ip_test_task
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -91,8 +92,9 @@ class MainActivity : ComponentActivity() {
             val database = ProductDatabase.getDbInstance(this@MainActivity)
             val products = database.productDao.selectAllProducts()
 
+            Log.i("Products count", products.size.toString())
+
             if (products.isEmpty()) {
-                fillDatabase(this@MainActivity)
                 withContext(Dispatchers.Main) {
                     fakeViewModelInstance.loadProducts(10)
                 }
@@ -142,106 +144,106 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-suspend fun fillDatabase(context: Context) {
-    //МНЕ НЕ ПОНРАВИЛАСЬ СТРУКТУРА (ТО ЧТО ТЕГИ ИДУТ ПРОСТО СТРОКОЙ) В ПРЕДОСТАВЛЕНННОЙ БАЗЕ ДАННЫХ ПОЭТОМУ ПРИШЛОСЬ ВРУЧНУЮ ВСЕ ВПИЛИВАТЬ
-    var productInitialList = listOf(
-        ProductDTO(
-            id = null,
-            name = "iPhone 13",
-            amount = 15,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(1633046400000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Телефон", "Новый", "Хит")
-        ),
-        ProductDTO(
-            id = null,
-            name = "Samsung Galaxy S21",
-            amount = 30,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(1633132800000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Телефон", "Хит")
-        ),
-        ProductDTO(
-            id = null,
-            name = "Playstation 5",
-            amount = 7,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(1633219200000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Игровая приставка", "Акция", "Распродажа")
-        ),
-        ProductDTO(
-            id = null,
-            name = "LG OLED TV",
-            amount = 22,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(163305600000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Телевизор", "Эксклюзив", "Ограниченный")
-        ),
-        ProductDTO(
-            id = null,
-            name = "Apple Watch Series 7",
-            amount = 0,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(163392000000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Часы", "Новый", "Рекомендуем")
-        ),
-        ProductDTO(
-            id = null,
-            name = "Xiaomi Mi 11",
-            amount = 5,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(1633478400000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Телефон", "Скидка", "Распродажа")
-        ),
-        ProductDTO(
-            id = null,
-            name = "MacBook Air M1",
-            amount = 12,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(1633564800000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Ноутбук", "Тренд")
-        ),
-        ProductDTO(
-            id = null,
-            name = "Amazon Kindle Paperwhite",
-            amount = 18,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(1633651200000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Электронная книга", "Последний шанс", "Ограниченный")
-        ),
-        ProductDTO(
-            id = null,
-            name = "Fitbit Charge 5",
-            amount = 27,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(1633737600000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf()
-        ),
-        ProductDTO(
-            id = null,
-            name = "GoPro Hero 10",
-            amount = 25,
-            time = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(1633724000000), ZoneId.of("Europe/Moscow")
-            ),
-            tags = listOf("Камера", "Эксклюзив")
-        )
-    )
-
-    coroutineScope {
-        for (item in productInitialList)
-            ProductDatabase.getDbInstance(context).productDao.upsertProduct(item)
-    }
-}
+//suspend fun fillDatabase(context: Context) {
+//    //МНЕ НЕ ПОНРАВИЛАСЬ СТРУКТУРА (ТО ЧТО ТЕГИ ИДУТ ПРОСТО СТРОКОЙ) В ПРЕДОСТАВЛЕНННОЙ БАЗЕ ДАННЫХ ПОЭТОМУ ПРИШЛОСЬ ВРУЧНУЮ ВСЕ ВПИЛИВАТЬ
+//    var productInitialList = listOf(
+//        ProductDTO(
+//            id = null,
+//            name = "iPhone 13",
+//            amount = 15,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(1633046400000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Телефон", "Новый", "Хит")
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "Samsung Galaxy S21",
+//            amount = 30,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(1633132800000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Телефон", "Хит")
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "Playstation 5",
+//            amount = 7,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(1633219200000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Игровая приставка", "Акция", "Распродажа")
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "LG OLED TV",
+//            amount = 22,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(163305600000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Телевизор", "Эксклюзив", "Ограниченный")
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "Apple Watch Series 7",
+//            amount = 0,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(163392000000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Часы", "Новый", "Рекомендуем")
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "Xiaomi Mi 11",
+//            amount = 5,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(1633478400000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Телефон", "Скидка", "Распродажа")
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "MacBook Air M1",
+//            amount = 12,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(1633564800000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Ноутбук", "Тренд")
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "Amazon Kindle Paperwhite",
+//            amount = 18,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(1633651200000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Электронная книга", "Последний шанс", "Ограниченный")
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "Fitbit Charge 5",
+//            amount = 27,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(1633737600000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf()
+//        ),
+//        ProductDTO(
+//            id = null,
+//            name = "GoPro Hero 10",
+//            amount = 25,
+//            time = LocalDateTime.ofInstant(
+//                Instant.ofEpochMilli(1633724000000), ZoneId.of("Europe/Moscow")
+//            ),
+//            tags = listOf("Камера", "Эксклюзив")
+//        )
+//    )
+//
+//    coroutineScope {
+//        for (item in productInitialList)
+//            ProductDatabase.getDbInstance(context).productDao.upsertProduct(item)
+//    }
+//}
 
 class FakeViewModelClass(private val context: Context) : ViewModel() {
     private var currentOffset = 0
@@ -268,6 +270,7 @@ class FakeViewModelClass(private val context: Context) : ViewModel() {
             val result = ProductDatabase.getDbInstance(context).productDao.selectPaginatedProducts(
                 limit
             )
+            Log.i("Database", result.size.toString())
             currentOffset += 10
             isLoading.value = false
             productList.value += result
@@ -312,10 +315,13 @@ class FakeViewModelClass(private val context: Context) : ViewModel() {
                     product
                 }
             }
-            Toast.makeText(context,"все изменилось сохранилось",Toast.LENGTH_LONG).show()
-        }
-        else
-            Toast.makeText(context,"ну с поиском изменение не сделал и так много всего напихал",Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "все изменилось сохранилось", Toast.LENGTH_LONG).show()
+        } else
+            Toast.makeText(
+                context,
+                "ну с поиском изменение не сделал и так много всего напихал",
+                Toast.LENGTH_LONG
+            ).show()
     }
 
     fun deleteProduct(deletedProduct: ProductDTO) {
@@ -323,10 +329,13 @@ class FakeViewModelClass(private val context: Context) : ViewModel() {
             productList.value = productList.value.filter { product ->
                 product.id != deletedProduct.id
             }
-            Toast.makeText(context,"все удалилось сохранилось",Toast.LENGTH_LONG).show()
-        }
-        else{
-            Toast.makeText(context,"ну с поиском удаление не сделал и так много всего напихал",Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "все удалилось сохранилось", Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(
+                context,
+                "ну с поиском удаление не сделал и так много всего напихал",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 }
@@ -506,7 +515,7 @@ fun ProductEntry(
             }
         )
     }
-    if (deleteDialog){
+    if (deleteDialog) {
         DeleteDialog(
             iconModifier = Modifier
                 .size(48.dp),
@@ -665,7 +674,9 @@ fun ProductEntry(
                         .weight(1f)
                 ) {
                     Text(
-                        text = productEntry.time.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss")),
+                        text = LocalDateTime.ofInstant(
+                            Instant.ofEpochMilli(productEntry.time.toLong()), ZoneId.systemDefault()
+                        ).format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss")),
                         fontSize = 16.sp
                     )
                 }
@@ -679,6 +690,7 @@ fun ProductEntry(
 }
 
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ChipsPanel(
     chipsList: List<String>

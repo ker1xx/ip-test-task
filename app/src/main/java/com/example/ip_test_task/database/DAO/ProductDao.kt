@@ -12,10 +12,10 @@ interface ProductDao {
     @Upsert
     suspend fun upsertProduct(product: ProductDTO)
 
-    @Query("SELECT * FROM Product")
+    @Query("SELECT * FROM item")
     fun selectAllProducts(): List<ProductDTO>
 
-    @Query("SELECT * FROM Product LIMIT :limit")
+    @Query("SELECT * FROM item LIMIT :limit")
     fun selectPaginatedProducts(limit: Int): List<ProductDTO>
 
     @Delete
